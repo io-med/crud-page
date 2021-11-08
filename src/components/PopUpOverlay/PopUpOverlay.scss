@@ -2,12 +2,20 @@
 @import '../../styles/extends';
 
 .PopUpOverlay {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 
-    background-color: #{$light-blue}aa;
+  background-color: #{$light-blue}aa;
+
+  opacity: 1;
+
+  transition: all 500ms;
+
+  &--hidden {
+    opacity: 0;
+  }
 }

@@ -5,4 +5,14 @@
   position: fixed;
   bottom: 32px;
   right: 32px;
+
+  opacity: 1;
+
+  transition: all 300ms;
+
+  &--hidden {
+    right: -50px;
+
+    opacity: 0;
+  }
 }

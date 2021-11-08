@@ -2,10 +2,9 @@
 @import '../../styles/extends';
 
 .Header {
-  $height: 50px;
-
   position: sticky;
-  top: 5px;
+  z-index: 2;
+  top: -5px;
 
   display: flex;
   justify-content: space-between;
@@ -17,10 +16,15 @@
   padding: 0 20px;
 
   box-shadow: 5px 10px 15px #0003;
-  background-color: $background;
+  background-color: $main-blue;
   border-radius: $border-radius;
 
   &__heading {
     margin: 0;
+  }
+
+  &__home-link {
+    text-decoration: none;
+    color: $text-white;
   }
 }

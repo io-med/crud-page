@@ -27,6 +27,7 @@ export const ResultMessage: React.FC<Props> = ({ hidePopUp, itWasError }) => {
 
       <Button
         text="close"
+        fixedWidth={true}
         clickHandler={hidePopUp}
       />
     </div>

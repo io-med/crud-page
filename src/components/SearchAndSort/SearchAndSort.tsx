@@ -55,12 +55,10 @@ export const SearchAndSort: React.FC<Props> = ({
       <Button
         text={isReverse ? 'v' : '^'}
         clickHandler={reverse}
-        isWhite={true}
       />
       
       <Button
         text="reset"
-        isWhite={true}
         clickHandler={resetSort}
       />
     </div>

@@ -1,3 +1,5 @@
+import classNames from "classnames";
+import { useEffect, useState } from "react";
 import { Button } from "../Button"
 
 type Props = {
@@ -5,10 +7,23 @@ type Props = {
 }
 
 export const AddPostButton: React.FC<Props> = ({ addPopUpToggler }) => {
+  const [isHidden, SetIsHidden] = useState(true);
+
+  const changeVisibility = () => {
+    SetIsHidden(current => !current);
+  };
+
+  useEffect(() => {
+    setTimeout(changeVisibility, 0)
+  }, []);
+
   return (
 
     <div
-      className="AddPostButton"
+      className={classNames(
+        'AddPostButton',
+        {'AddPostButton--hidden': isHidden},
+      )}
     >
       <Button
         text="create new post"

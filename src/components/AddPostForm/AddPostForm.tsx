@@ -1,4 +1,5 @@
-import { useState } from "react";
+import classNames from "classnames";
+import { useEffect, useState } from "react";
 import { createPost } from "../../api/api";
 import { Post } from "../../types/Post";
 import { Button } from "../Button";
@@ -16,6 +17,15 @@ export const AddPostForm: React.FC<Props> = ({ addPost, hidePopUp }) => {
   const [url, setUrl] = useState('');
   const [errorWasReceived, setErrorWasReceived] = useState(false);
   const [postWasAdded, setPostWasAdded] = useState(false);
+  const [isHidden, SetIsHidden] = useState(true);
+
+  const changeVisibility = () => {
+    SetIsHidden(current => !current);
+  };
+
+  useEffect(() => {
+    setTimeout(changeVisibility, 0)
+  }, []);
 
   const newPost = {
     title,
@@ -49,7 +59,10 @@ export const AddPostForm: React.FC<Props> = ({ addPost, hidePopUp }) => {
 
   return (
     <form
-      className="AddPostForm"
+      className={classNames(
+        'AddPostForm',
+        {'AddPostForm--hidden':isHidden},
+      )}
       onSubmit={(event) => {
         submitHandler(event, newPost)
       }}
@@ -120,18 +133,20 @@ export const AddPostForm: React.FC<Props> = ({ addPost, hidePopUp }) => {
           </div>
         </div>
       }
-      {errorWasReceived &&
-        <ResultMessage
-          hidePopUp={hidePopUp}
-          itWasError={errorWasReceived}
-        />
-      }
-      {postWasAdded &&
-        <ResultMessage
-          hidePopUp={hidePopUp}
-          itWasError={errorWasReceived}
-        />
-      }
+      <div className="AddPostForm__buttons">
+        {errorWasReceived &&
+          <ResultMessage
+            hidePopUp={hidePopUp}
+            itWasError={errorWasReceived}
+          />
+        }
+        {postWasAdded &&
+          <ResultMessage
+            hidePopUp={hidePopUp}
+            itWasError={errorWasReceived}
+          />
+        }
+      </div>
     </form>
   )
 }

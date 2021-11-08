@@ -1,4 +1,5 @@
-import { useState } from "react";
+import classNames from "classnames";
+import { useEffect, useState } from "react";
 import { editPost } from "../../api/api";
 import { Post } from "../../types/Post";
 import { Button } from "../Button";
@@ -22,6 +23,16 @@ export const EditPopUp: React.FC<Props> = ({
   const [url, setUrl] = useState(postData.url);
   const [errorWasReceived, setErrorWasReceived] = useState(false);
   const [postWasChanged, setPostWasChanged] = useState(false);
+  const [isHidden, SetIsHidden] = useState(true);
+  const [buttonIsDisabled, setButtonIsDisabled] = useState(false);
+
+  const changeVisibility = () => {
+    SetIsHidden(current => !current);
+  };
+
+  useEffect(() => {
+    setTimeout(changeVisibility, 0)
+  }, []);
 
   const modifiedPost = {
     title,
@@ -46,6 +57,7 @@ export const EditPopUp: React.FC<Props> = ({
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setButtonIsDisabled(true);
     editPost(modifiedPost, postData.id)
       .then((response) => {
         setPosts(current => {
@@ -65,7 +77,10 @@ export const EditPopUp: React.FC<Props> = ({
       />
 
       <form
-        className="EditPopUp__form"
+        className={classNames(
+          'EditPopUp__form',
+          { 'EditPopUp__form--hidden' : isHidden }
+        )}
         onSubmit={(event) => {
           submitHandler(event);
         }}
@@ -124,6 +139,7 @@ export const EditPopUp: React.FC<Props> = ({
               <Button
                 text="submit"
                 isSubmit={true}
+                isDisabled={buttonIsDisabled}
               />
 
               <Button

@@ -25,7 +25,12 @@ export const Header: React.FC<Props> = ({
   return (
     <header className="Header">
       <h1 className="Header__heading">
-        CRUD
+        <a
+          className="Header__home-link"
+          href="/"
+        >
+          CRUD
+        </a>
       </h1>
       <SearchAndSort
         isReverse={isReversed}
@@ -36,7 +41,11 @@ export const Header: React.FC<Props> = ({
         resetSort={resetSort}
       />
       <Button
-        text={isInEditMode ? 'exit edit mode' : 'enter edit mode'}
+        text={
+          isInEditMode
+            ? 'quit edit'
+            : 'edit mode'
+        }
         fixedWidth={true}
         clickHandler={modeToggler}
       />

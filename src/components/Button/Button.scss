@@ -2,6 +2,7 @@
 
 .Button {
   height: 50px;
+  min-width: 50px;
   margin: 0;
   padding: 0 15px;
 
@@ -9,7 +10,7 @@
   color: $text-white;
   
   background-color: $main-blue;
-  border: none;
+  border: 1px solid #{$light-blue}22;
   border-radius: $border-radius;
   box-shadow: 3px 3px 10px #0002;
   cursor: pointer;

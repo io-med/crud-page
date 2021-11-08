@@ -4,9 +4,28 @@
 .AddPostForm {
   @extend %popup;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 300px;
   height: 300px;
   padding: 40px;
+
+  opacity: 1;
+
+  transition: all 400ms;
+
+  &--hidden {
+    top: 100%;
+    left: 100%;
+    bottom: 0;
+    right: 0;
+
+    width: 50px;
+
+    opacity: 0.3;
+  }
 
   &__content {
     display: flex;

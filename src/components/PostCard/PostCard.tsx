@@ -1,3 +1,4 @@
+import classNames from "classnames"
 import { Post } from "../../types/Post"
 import { EditOrDelete } from "../EditOrDelete"
 
@@ -7,7 +8,11 @@ type Props = {
   setPosts: (posts: Post[] | ((current: Post[]) => Post[])) => void;
 }
 
-export const PostCard: React.FC<Props> = ({ postData, isInEditMode, setPosts }) => {
+export const PostCard: React.FC<Props> = ({
+  postData,
+  isInEditMode,
+  setPosts,
+}) => {
   return (
     <div className="PostCard">
       <h2 className="PostCard__heading">
@@ -24,7 +29,10 @@ export const PostCard: React.FC<Props> = ({ postData, isInEditMode, setPosts }) 
         rel="noreferrer"
       >
         <img
-          className="PostCard__image"
+          className={classNames(
+            'PostCard__image',
+            {'PostCard__image--tall': !isInEditMode}
+          )}
           src={postData.image}
           alt={postData.title}
         />

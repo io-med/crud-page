@@ -1,4 +1,5 @@
-import { useState } from "react";
+import classNames from "classnames";
+import { useEffect, useState } from "react";
 import { removePost } from "../../api/api";
 import { Post } from "../../types/Post";
 import { Button } from "../Button";
@@ -14,6 +15,16 @@ type Props = {
 export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, setPosts }) => {
   const [errorWasReceived, setErrorWasReceived] = useState(false);
   const [postWasDeleted, setPostWasDeleted] = useState(false);
+  const [isHidden, SetIsHidden] = useState(true);
+  const [buttonIsDisabled, setButtonIsDisabled] = useState(false);
+
+  const changeVisibility = () => {
+    SetIsHidden(current => !current);
+  };
+
+  useEffect(() => {
+    setTimeout(changeVisibility, 0)
+  }, []);
 
   const hidePopUp = () => {
     popUpDisplayHandler(false);
@@ -22,10 +33,11 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
   const deletePost = (idOfPostToDelete: number) => {
     removePost(idOfPostToDelete)
       .then(() => {
-        setPosts((current: Post[]) => {
-          return current.filter(post => post.id !== postId);
-        });
         setPostWasDeleted(true);
+        setPosts((current: Post[]) => {
+          return current
+            .filter(post => post.id !== postId);
+        });
       })
       .catch(() => {
         setErrorWasReceived(true)
@@ -34,6 +46,7 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
 
   const clickHandler = () => {
     deletePost(postId);
+    setButtonIsDisabled(true)
   }
 
   return (
@@ -42,7 +55,12 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
         hidePopUp={hidePopUp}
       />
 
-      <div className="ConfirmPopUp__content">
+      <div
+        className={classNames(
+          'ConfirmPopUp__content',
+          { 'ConfirmPopUp__content--hidden': isHidden },
+        )}
+      >
         {errorWasReceived || postWasDeleted ||
           <div className="ConfirmPopUp__interface">
             <p className="ConfirmPopUp__text">
@@ -55,6 +73,7 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
                 text="yes"
                 isWhite={true}
                 fixedWidth={true}
+                isDisabled={buttonIsDisabled}
               />
 
               <Button

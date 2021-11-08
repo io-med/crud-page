@@ -12,6 +12,17 @@
     width: 300px;
     height: 300px;
     padding: 40px;
+
+    opacity: 1;
+
+    transition: all 300ms;
+
+    &--hidden {
+      top: 20%;
+      width: 50px;
+  
+      opacity: 0;
+    }
   }
 
   &__interface {

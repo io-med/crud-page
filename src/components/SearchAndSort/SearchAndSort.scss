@@ -5,16 +5,15 @@
   gap: 25px;
 
   height: 50px;
-  width: max-content;
+  width: 95%;
   padding: 20px;
 
-  border-radius: $border-radius;
   background-color: $main-blue;
-  box-shadow: 0 0 15px #0003;
 
   &__input {
     border: 15px;
 
+    font-size: 16px;
     color: $text-white;
 
     background-color: $main-blue;
@@ -32,6 +31,7 @@
 
   &__select {
     color: $text-white;
+    font-size: 16px;
 
     background-color: $main-blue;
     border: none;

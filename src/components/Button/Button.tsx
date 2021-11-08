@@ -5,6 +5,7 @@ type Props = {
   clickHandler?: () => void;
   isWhite?: boolean;
   isSubmit?: boolean;
+  isDisabled?: boolean;
   fixedWidth?: boolean;
 }
 
@@ -14,6 +15,7 @@ export const Button: React.FC<Props> = ({
   isWhite,
   isSubmit,
   fixedWidth,
+  isDisabled,
 }) => {
   return (
     <button
@@ -24,6 +26,7 @@ export const Button: React.FC<Props> = ({
       )}
       type={isSubmit ? 'submit' : 'button'}
       onClick={clickHandler}
+      disabled={isDisabled}
     >
       {text}
     </button>

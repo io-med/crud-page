@@ -1,11 +1,13 @@
 # CRUD page
 
+**IN PROGRESS**
+
 CRUD operations page with sort. Based on https://yourtestapi.com/ API
 - [DEMO LINK](https://io-med.github.io/crud-page/)
 
 ## Description
 
-The task was to create CRUD operations page with posts from give API.
+**The task** was to create CRUD operations page with posts from given API.
 
 ## Local development
 
