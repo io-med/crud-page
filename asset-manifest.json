@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/io-med/crud-page/static/css/main.1f638475.chunk.css",
+    "main.js": "/io-med/crud-page/static/js/main.cec41256.chunk.js",
+    "main.js.map": "/io-med/crud-page/static/js/main.cec41256.chunk.js.map",
+    "runtime-main.js": "/io-med/crud-page/static/js/runtime-main.9c010507.js",
+    "runtime-main.js.map": "/io-med/crud-page/static/js/runtime-main.9c010507.js.map",
+    "static/js/2.a5a26aad.chunk.js": "/io-med/crud-page/static/js/2.a5a26aad.chunk.js",
+    "static/js/2.a5a26aad.chunk.js.map": "/io-med/crud-page/static/js/2.a5a26aad.chunk.js.map",
+    "static/js/3.da13cf94.chunk.js": "/io-med/crud-page/static/js/3.da13cf94.chunk.js",
+    "static/js/3.da13cf94.chunk.js.map": "/io-med/crud-page/static/js/3.da13cf94.chunk.js.map",
+    "index.html": "/io-med/crud-page/index.html",
+    "static/css/main.1f638475.chunk.css.map": "/io-med/crud-page/static/css/main.1f638475.chunk.css.map",
+    "static/js/2.a5a26aad.chunk.js.LICENSE.txt": "/io-med/crud-page/static/js/2.a5a26aad.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c010507.js",
+    "static/js/2.a5a26aad.chunk.js",
+    "static/css/main.1f638475.chunk.css",
+    "static/js/main.cec41256.chunk.js"
+  ]
+}
