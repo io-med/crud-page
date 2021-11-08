@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+
+.SearchAndSort {
+  display: flex;
+  gap: 25px;
+
+  height: 50px;
+  width: max-content;
+  padding: 20px;
+
+  border-radius: 50px;
+  background-color: $main-blue;
+
+  &__input {
+    border: 15px;
+
+    color: $text-white;
+
+    background-color: $main-blue;
+
+    border-bottom: 1px solid $text-white;
+
+    &::placeholder {
+      color: $text-white;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__select {
+    color: $text-white;
+
+    background-color: $main-blue;
+    border: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

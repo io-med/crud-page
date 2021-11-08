@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.Button {
+  height: 50px;
+  margin: 0;
+  padding: 0 15px;
+
+  color: $text-white;
+  
+  background-color: $main-blue;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px #0002;
+  cursor: pointer;
+
+  &--white {
+    color: $text-black;
+
+    background-color: $background;
+  }
+}

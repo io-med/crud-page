@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.ListOfPosts {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 340px);
+  gap: 50px;
+
+  max-width: $max-width;
+  min-width: $min-width;
+  margin: 0 auto;
+  padding: 30px;
+
+  list-style: none;
+}

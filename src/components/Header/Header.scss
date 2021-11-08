@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+@import '../../styles/extends';
+
+.Header {
+  $height: 50px;
+
+  position: sticky;
+  top: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: $height;
+  max-width: $max-width;
+  min-width: $min-width;
+  margin: 0 auto;
+  padding: 20px;
+
+  box-shadow: 5px 10px 15px #0003;
+  background-color: $background;
+  border-radius: $height;
+
+  &__heading {
+    margin: 0;
+  }
+}

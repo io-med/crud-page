@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.ResultMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  &__text {
+    color: $success-green;
+
+    &--error {
+      color: $error-red;
+    }
+  }
+}
