@@ -1,5 +1,8 @@
+@import './variables';
+
 %popup {
   position: fixed;
+  z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -8,4 +11,18 @@
   justify-content: center;
 
   background-color: $background;
+  border-radius: $border-radius;
+}
+
+%form-input {
+  border: 2px solid #ffffff00;
+  padding: 7px;
+  border-bottom: 2px solid $text-black;
+
+  &:focus {
+    border: 2px solid $main-blue;
+    outline: none;
+
+    border-radius: $border-radius;
+  }
 }

@@ -11,15 +11,14 @@
   justify-content: space-between;
   align-items: center;
 
-  height: $height;
   max-width: $max-width;
   min-width: $min-width;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 
   box-shadow: 5px 10px 15px #0003;
   background-color: $background;
-  border-radius: $height;
+  border-radius: $border-radius;
 
   &__heading {
     margin: 0;

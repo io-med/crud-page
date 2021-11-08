@@ -15,6 +15,13 @@ export const getPosts = (): Promise<Post[]> => {
 
 export const removePost = (postId: number) => {
   return fetch(`${BASE_URL}/${postId}`, { method: 'DELETE' })
+  .then(response => {
+    if (!response.ok) {
+      return Promise.reject();
+    }
+
+    return response.json();
+  })
 };
 
 export const editPost = (post: Partial<Post>, postId: number) => {

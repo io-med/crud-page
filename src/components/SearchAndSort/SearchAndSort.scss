@@ -8,8 +8,9 @@
   width: max-content;
   padding: 20px;
 
-  border-radius: 50px;
+  border-radius: $border-radius;
   background-color: $main-blue;
+  box-shadow: 0 0 15px #0003;
 
   &__input {
     border: 15px;

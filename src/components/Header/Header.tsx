@@ -37,6 +37,7 @@ export const Header: React.FC<Props> = ({
       />
       <Button
         text={isInEditMode ? 'exit edit mode' : 'enter edit mode'}
+        fixedWidth={true}
         clickHandler={modeToggler}
       />
     </header>

@@ -1,3 +1,3 @@
-import './EditPopUp.scss';
+import './EditPopUp.scss'
 
 export * from './EditPopUp';

@@ -1,16 +1,41 @@
 @import '../../styles/extends';
 
 .EditPopUp {
-  @extend %popup;
-
-  width: 300px;
-  height: 300px;
-
   &__form {
     @extend %popup;
+    width: 300px;
+    height: 300px;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__interface {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__heading {
+    margin: 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px
   }
 
   &__input {
-    background-color: yellow;
+    @extend %form-input;
+  }
+
+  &__message {
+    display: flex;
+    justify-content: center;
   }
 }

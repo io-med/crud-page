@@ -20,6 +20,10 @@
     margin: 0;
   }
 
+  &__input {
+    @extend %form-input;
+  }
+
   &__buttons {
     display: flex;
     justify-content: space-between;

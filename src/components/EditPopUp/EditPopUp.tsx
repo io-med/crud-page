@@ -72,7 +72,12 @@ export const EditPopUp: React.FC<Props> = ({
       >
         {errorWasReceived || postWasChanged ||
           <div className="EditPopUp__interface">
+            <h2 className="EditPopUp__heading">
+              Edit this post
+            </h2>
+
             <input
+              className="EditPopUp__input"
               type="text"
               value={title}
               onChange={(event => {
@@ -115,31 +120,36 @@ export const EditPopUp: React.FC<Props> = ({
               required
             />
 
-            <Button
-              text="submit"
-              isSubmit={true}
-            />
+            <div className="EditPopUp__buttons">
+              <Button
+                text="submit"
+                isSubmit={true}
+              />
 
-            <Button
-              text="cancel"
-              clickHandler={hidePopUp}
-            />
+              <Button
+                text="cancel"
+                isWhite={true}
+                clickHandler={hidePopUp}
+              />
+            </div>
           </div>
         }
 
-        {errorWasReceived &&
-          <ResultMessage
-            hidePopUp={hidePopUp}
-            itWasError={errorWasReceived}
-          />
-        }
+        <div className="EditPopUp__message">
+          {errorWasReceived &&
+            <ResultMessage
+              hidePopUp={hidePopUp}
+              itWasError={errorWasReceived}
+            />
+          }
 
-        {postWasChanged &&
-          <ResultMessage
-            hidePopUp={hidePopUp}
-            itWasError={errorWasReceived}
-          />
-        }
+          {postWasChanged &&
+            <ResultMessage
+              hidePopUp={hidePopUp}
+              itWasError={errorWasReceived}
+            />
+          }
+        </div>
       </form>
     </div>
   )

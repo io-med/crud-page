@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Post } from "../../types/Post";
 import { Button } from "../Button";
 import { ConfirmPopUp } from "../ConfirmPopUp";
-import { EditPopUp } from "../EditPopUp/EditPopUp";
+import { EditPopUp } from "../EditPopUp";
 
 type Props = {
   postData: Post;
@@ -26,12 +26,14 @@ export const EditOrDelete: React.FC<Props> = ({ postData, setPosts }) => {
       <Button
         text="edit"
         clickHandler={showEdit}
+        fixedWidth={true}
       />
 
       <Button
         text="delete"
         isWhite={true}
         clickHandler={showConfirm}
+        fixedWidth={true}
       />
 
       {confirmIsShown &&

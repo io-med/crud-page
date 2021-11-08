@@ -5,12 +5,23 @@ type Props = {
   clickHandler?: () => void;
   isWhite?: boolean;
   isSubmit?: boolean;
+  fixedWidth?: boolean;
 }
 
-export const Button: React.FC<Props> = ({ clickHandler, text, isWhite, isSubmit }) => {
+export const Button: React.FC<Props> = ({
+  clickHandler,
+  text,
+  isWhite,
+  isSubmit,
+  fixedWidth,
+}) => {
   return (
     <button
-      className={classNames('Button', {'Button--white': isWhite})}
+      className={classNames(
+        'Button',
+        { 'Button--white': isWhite },
+        { 'Button--fixed-width': fixedWidth },
+      )}
       type={isSubmit ? 'submit' : 'button'}
       onClick={clickHandler}
     >

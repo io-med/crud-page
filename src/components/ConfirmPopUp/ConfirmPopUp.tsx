@@ -54,29 +54,33 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
                 clickHandler={clickHandler}
                 text="yes"
                 isWhite={true}
+                fixedWidth={true}
               />
 
               <Button
                 clickHandler={hidePopUp}
                 text="no"
+                fixedWidth={true}
               />
             </div>
           </div>
         }
 
-        {errorWasReceived &&
-          <ResultMessage
-            hidePopUp={hidePopUp}
-            itWasError={errorWasReceived}
-          />
-        }
+        <div className="ConfirmPopUp__message">
+          {errorWasReceived &&
+            <ResultMessage
+              hidePopUp={hidePopUp}
+              itWasError={errorWasReceived}
+            />
+          }
 
-        {postWasDeleted &&
-          <ResultMessage
-            hidePopUp={hidePopUp}
-            itWasError={errorWasReceived}
-          />
-        }
+          {postWasDeleted &&
+            <ResultMessage
+              hidePopUp={hidePopUp}
+              itWasError={errorWasReceived}
+            />
+          }
+        </div>
       </div>
     </div>
   )
