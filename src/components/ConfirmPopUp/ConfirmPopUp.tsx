@@ -14,7 +14,6 @@ type Props = {
 
 export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, setPosts }) => {
   const [errorWasReceived, setErrorWasReceived] = useState(false);
-  const [postWasDeleted, setPostWasDeleted] = useState(false);
   const [isHidden, SetIsHidden] = useState(true);
   const [buttonIsDisabled, setButtonIsDisabled] = useState(false);
 
@@ -33,7 +32,6 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
   const deletePost = (idOfPostToDelete: number) => {
     removePost(idOfPostToDelete)
       .then(() => {
-        setPostWasDeleted(true);
         setPosts((current: Post[]) => {
           return current
             .filter(post => post.id !== postId);
@@ -61,8 +59,8 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
           { 'ConfirmPopUp__content--hidden': isHidden },
         )}
       >
-        {errorWasReceived || postWasDeleted ||
-          <div className="ConfirmPopUp__interface">
+        {errorWasReceived
+          || <div className="ConfirmPopUp__interface">
             <p className="ConfirmPopUp__text">
               Are you sure?
             </p>
@@ -87,13 +85,6 @@ export const ConfirmPopUp: React.FC<Props> = ({ popUpDisplayHandler, postId, set
 
         <div className="ConfirmPopUp__message">
           {errorWasReceived &&
-            <ResultMessage
-              hidePopUp={hidePopUp}
-              itWasError={errorWasReceived}
-            />
-          }
-
-          {postWasDeleted &&
             <ResultMessage
               hidePopUp={hidePopUp}
               itWasError={errorWasReceived}
