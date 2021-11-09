@@ -7,6 +7,12 @@ CRUD operations page with sort. Based on https://yourtestapi.com/ API
 
 **The task** was to create CRUD operations page with posts from given API.
 
+### Technologies were used:
+
+- React
+- TypeScript
+- SASS
+
 ## Troubleshooting
 
 Any advise for common problems or issues.
